@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\TipoHabitacion;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TipoHabitacionController extends Controller
@@ -11,14 +11,6 @@ class TipoHabitacionController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +26,7 @@ class TipoHabitacionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TipoHabitacion $tipoHabitacion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(TipoHabitacion $tipoHabitacion)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +34,7 @@ class TipoHabitacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TipoHabitacion $tipoHabitacion)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +42,7 @@ class TipoHabitacionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TipoHabitacion $tipoHabitacion)
+    public function destroy(string $id)
     {
         //
     }

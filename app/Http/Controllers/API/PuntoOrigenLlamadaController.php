@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\Punto_origen_llamada;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PuntoOrigenLlamadaController extends Controller
@@ -11,14 +11,6 @@ class PuntoOrigenLlamadaController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +26,7 @@ class PuntoOrigenLlamadaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Punto_origen_llamada $punto_origen_llamada)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Punto_origen_llamada $punto_origen_llamada)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +34,7 @@ class PuntoOrigenLlamadaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Punto_origen_llamada $punto_origen_llamada)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +42,7 @@ class PuntoOrigenLlamadaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Punto_origen_llamada $punto_origen_llamada)
+    public function destroy(string $id)
     {
         //
     }

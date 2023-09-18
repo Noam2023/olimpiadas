@@ -1,24 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\Habitacion;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HabitacionController extends Controller
+class EmergenciaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +26,7 @@ class HabitacionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Habitacion $habitacion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Habitacion $habitacion)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +34,7 @@ class HabitacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Habitacion $habitacion)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +42,7 @@ class HabitacionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Habitacion $habitacion)
+    public function destroy(string $id)
     {
         //
     }

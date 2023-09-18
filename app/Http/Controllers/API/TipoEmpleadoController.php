@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\Tipo_empleado;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TipoEmpleadoController extends Controller
@@ -11,14 +11,6 @@ class TipoEmpleadoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +26,7 @@ class TipoEmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tipo_empleado $tipo_empleado)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Tipo_empleado $tipo_empleado)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +34,7 @@ class TipoEmpleadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipo_empleado $tipo_empleado)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +42,7 @@ class TipoEmpleadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo_empleado $tipo_empleado)
+    public function destroy(string $id)
     {
         //
     }

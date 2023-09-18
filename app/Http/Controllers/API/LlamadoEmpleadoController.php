@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Models\Llamado_Empleado;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LlamadoEmpleadoController extends Controller
@@ -11,14 +11,6 @@ class LlamadoEmpleadoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +26,7 @@ class LlamadoEmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Llamado_Empleado $llamado_Empleado)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Llamado_Empleado $llamado_Empleado)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +34,7 @@ class LlamadoEmpleadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Llamado_Empleado $llamado_Empleado)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +42,7 @@ class LlamadoEmpleadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Llamado_Empleado $llamado_Empleado)
+    public function destroy(string $id)
     {
         //
     }
