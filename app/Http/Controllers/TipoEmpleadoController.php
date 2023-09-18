@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TipoHabitacionController extends Controller
+class TipoEmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
