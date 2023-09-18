@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('punto_origen_llamadas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('origen');
+            $table->unsignedBigInteger('habitacion_id');
+
+            $table->foreign('habitacion_id')->references('id')->on('habitacions')->onDelete('cascade');
         });
     }
 

@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('habitacions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // numero de habitacion
+            $table->unsignedBigInteger('zona_id');
+            
+            $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');
+
         });
     }
 

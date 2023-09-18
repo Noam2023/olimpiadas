@@ -12,7 +12,7 @@ class LlamadoController extends Controller
      */
     public function index()
     {
-        //
+        return Llamado::all();
     }
 
     /**

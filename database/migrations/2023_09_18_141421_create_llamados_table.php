@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('llamados', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->boolean('es_atendido')->default(false);
+            $table->boolean('es_urgente');
+            $table->unsignedBigInteger('origen_id');
+            $table->datetime('FechaHora_llamada');
+            $table->foreign('origen_id')->references('id')->on('punto_origen_llamadas')->onDelete('cascade');
+
         });
     }
 
