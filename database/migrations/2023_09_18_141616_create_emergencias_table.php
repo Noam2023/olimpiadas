@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('emergencias', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('llamado_id')->primary();
+            $table->integer('cantidad_empleados_involucrados');
+            $table->integer('cantidad_empleados_requeridos');
+
+            $table->foreign('llamado_id')->references('id')->on('llamados')->onDelete('cascade');
+
         });
     }
 

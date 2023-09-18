@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('zona__empleados', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('zona_id')->primary();
+            $table->unsignedBigInteger('empleado_id')->primary();
+
+            $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
+
         });
     }
 

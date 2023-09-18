@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('habitacion_id');
+            $table->string('nombre_paciente');
+            $table->string('apellido_paciente');       
+            $table->string('telefono_contacto', 15);
+            $table->string('telefono_paciente', 15);
+            $table->string('tipo_sangre', 5);
+            $table->longText('padecimientos_previos')->nullable();
+            $table->longText('alergias')->nullable();
+            $table->string('DNI', 25)->unique();;
+            $table->string('razon_ingreso');
+
+            $table->foreign('habitacion_id')->references('id')->on('habitacions')->onDelete('cascade');
         });
     }
 

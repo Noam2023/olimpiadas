@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre_usuario', 10);
+            $table->string('contrasena', 10);
+            $table->boolean('es_admin')->default(false);
         });
     }
 

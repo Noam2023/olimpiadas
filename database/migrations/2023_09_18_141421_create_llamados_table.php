@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean('es_urgente');
             $table->unsignedBigInteger('origen_id');
             $table->datetime('FechaHora_llamada');
+            
             $table->foreign('origen_id')->references('id')->on('punto_origen_llamadas')->onDelete('cascade');
 
         });
