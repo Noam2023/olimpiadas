@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\Punto_origen_llamada;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class PuntoOrigenLlamadaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Admin $admin)
+    public function show(Punto_origen_llamada $punto_origen_llamada)
     {
         //
     }
@@ -42,7 +42,7 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
+    public function edit(Punto_origen_llamada $punto_origen_llamada)
     {
         //
     }
@@ -50,7 +50,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Punto_origen_llamada $punto_origen_llamada)
     {
         //
     }
@@ -58,7 +58,7 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Admin $admin)
+    public function destroy(Punto_origen_llamada $punto_origen_llamada)
     {
         //
     }

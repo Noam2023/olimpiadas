@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
+use App\Models\Tipo_empleado;
 use Illuminate\Http\Request;
 
-class AreaController extends Controller
+class TipoEmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class AreaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Area $area)
+    public function show(Tipo_empleado $tipo_empleado)
     {
         //
     }
@@ -42,7 +42,7 @@ class AreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Area $area)
+    public function edit(Tipo_empleado $tipo_empleado)
     {
         //
     }
@@ -50,7 +50,7 @@ class AreaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Area $area)
+    public function update(Request $request, Tipo_empleado $tipo_empleado)
     {
         //
     }
@@ -58,7 +58,7 @@ class AreaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Area $area)
+    public function destroy(Tipo_empleado $tipo_empleado)
     {
         //
     }

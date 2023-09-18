@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Paciente_enfermero;
+use App\Models\Emergencia;
 use Illuminate\Http\Request;
 
-class PacienteEnfermeroController extends Controller
+class EmergenciaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PacienteEnfermeroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Paciente_enfermero $paciente_enfermero)
+    public function show(Emergencia $emergencia)
     {
         //
     }
@@ -42,7 +42,7 @@ class PacienteEnfermeroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Paciente_enfermero $paciente_enfermero)
+    public function edit(Emergencia $emergencia)
     {
         //
     }
@@ -50,7 +50,7 @@ class PacienteEnfermeroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Paciente_enfermero $paciente_enfermero)
+    public function update(Request $request, Emergencia $emergencia)
     {
         //
     }
@@ -58,7 +58,7 @@ class PacienteEnfermeroController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Paciente_enfermero $paciente_enfermero)
+    public function destroy(Emergencia $emergencia)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo_habitacion;
+use App\Models\TipoHabitacion;
 use Illuminate\Http\Request;
 
 class TipoHabitacionController extends Controller
@@ -34,7 +34,7 @@ class TipoHabitacionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tipo_habitacion $tipo_habitacion)
+    public function show(TipoHabitacion $tipoHabitacion)
     {
         //
     }
@@ -42,7 +42,7 @@ class TipoHabitacionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tipo_habitacion $tipo_habitacion)
+    public function edit(TipoHabitacion $tipoHabitacion)
     {
         //
     }
@@ -50,7 +50,7 @@ class TipoHabitacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipo_habitacion $tipo_habitacion)
+    public function update(Request $request, TipoHabitacion $tipoHabitacion)
     {
         //
     }
@@ -58,7 +58,7 @@ class TipoHabitacionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo_habitacion $tipo_habitacion)
+    public function destroy(TipoHabitacion $tipoHabitacion)
     {
         //
     }

@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_habitacions', function (Blueprint $table) {
+        Schema::create('habitacions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_habitacion');
-            $table->string('nombre_tipo')->unique();
-
-            $table->foreign('id_habitacion')->references('id')->on('tipo_habitacions')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_habitacions');
+        Schema::dropIfExists('habitacions');
     }
 };

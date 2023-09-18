@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Enfermero;
+use App\Models\Zona_Empleado;
 use Illuminate\Http\Request;
 
-class EnfermeroController extends Controller
+class ZonaEmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class EnfermeroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Enfermero $enfermero)
+    public function show(Zona_Empleado $zona_Empleado)
     {
         //
     }
@@ -42,7 +42,7 @@ class EnfermeroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Enfermero $enfermero)
+    public function edit(Zona_Empleado $zona_Empleado)
     {
         //
     }
@@ -50,7 +50,7 @@ class EnfermeroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Enfermero $enfermero)
+    public function update(Request $request, Zona_Empleado $zona_Empleado)
     {
         //
     }
@@ -58,7 +58,7 @@ class EnfermeroController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Enfermero $enfermero)
+    public function destroy(Zona_Empleado $zona_Empleado)
     {
         //
     }
