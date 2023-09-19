@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Zona;
+
 class ZonaController extends Controller
 {
     /**
@@ -26,9 +28,9 @@ class ZonaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Zona $zona)
     {
-        //
+        return $zona;
     }
 
     /**
