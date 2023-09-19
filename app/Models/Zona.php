@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Zona extends Model
 {
     use HasFactory;
+    public $timestamps = false; // Esto desactiva las marcas de tiempo
+
+    protected $fillable= [
+        'nombre_zona',
+    ];
 }

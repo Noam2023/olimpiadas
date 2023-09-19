@@ -22,6 +22,10 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre_zona' => 'required',
+        ]);
+
         $zona = new Zona;
         $zona->nombre_zona = $request->nombre_zona;
         $zona->save();
@@ -40,9 +44,16 @@ class ZonaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Zona $zona)
     {
-        //
+        $request->validate([
+            'nombre_zona' => 'required',
+        ]);
+
+        $zona->nombre_zona = $request->nombre_zona;
+        $zona->update();
+
+        return $zona;
     }
 
     /**
