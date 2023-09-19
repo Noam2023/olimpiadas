@@ -22,7 +22,11 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $zona = new Zona;
+        $zona->nombre_zona = $request->nombre_zona;
+        $zona->save();
+
+        return $zona;
     }
 
     /**
