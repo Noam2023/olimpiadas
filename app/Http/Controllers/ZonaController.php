@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Models\Zona;
 
 class ZonaController extends Controller
@@ -59,8 +58,15 @@ class ZonaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $zona = Zona::find($id);
+        
+        if(is_null($zona)) {
+            return response()->json('No se pudo realizar la operacion', 404);
+        }
+        
+        $zona->delete();
+        return[];
     }
 }

@@ -17,4 +17,23 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ZonaController;
 use App\Http\Controllers\ZonaEmpleadoController;
 
-route::apiResource('zonas', ZonaController::class);
+route::apiResource('emergencias', EmergenciaController::class); //h
+route::apiResource('empleados', EmpleadoController::class); //h
+
+route::apiResource('habitacions', HabitacionoController::class); //h
+Route::get('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@show'); //h
+Route::put('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@update');
+
+
+route::apiResource('tipo_habitacions', TipoHabitacionController::class); //h
+route::apiResource('llamados', LlamadoController::class);
+route::apiResource('llamado__empleados', LlamadoEmpleadoController::class);
+route::apiResource('pacientes', PacienteController::class);
+route::apiResource('paciente_enfermeros', PacienteEnfermeroController::class);
+route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class);
+route::apiResource('tipo_empleados', TipoEmpleadoController::class);
+route::apiResource('usuarios', UsuarioController::class);
+route::apiResource('zonas', ZonaController::class); //h
+route::apiResource('zona__empleados', ZonaEmpleadoController::class);
+
+

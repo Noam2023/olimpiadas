@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Empleado;
 
 class EmpleadoController extends Controller
 {
@@ -12,7 +13,7 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        //
+        return Empleado::all();
     }
 
     /**
@@ -20,15 +21,33 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre_empleado' => 'required',
+            'apellido_empleado' => 'required',
+            'telefono' => 'required',
+            'DNI' => 'required',
+            'email' => 'required',
+            
+        ]);
+
+        $empleado = new Empleado;
+        $empleado->nombre_empleado = $request->nombre_empleado;
+        $empleado->apellido_empleado = $request->apellido_empleado;
+        $empleado->telefono = $request->telefono;
+        $empleado->DNI = $request->DNI;
+        $empleado->email = $request->email;
+        
+        $empleado->save();
+
+        return $empleado;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Empleado $empleado)
     {
-        //
+        return $empleado;
     }
 
     /**
@@ -36,14 +55,38 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nombre_empleado' => 'required',
+            'apellido_empleado' => 'required',
+            'telefono' => 'required',
+            'DNI' => 'required',
+            'email' => 'required',
+            
+        ]);
+
+        $empleado->nombre_empleado = $request->nombre_empleado;
+        $empleado->apellido_empleado = $request->apellido_empleado;
+        $empleado->telefono = $request->telefono;
+        $empleado->DNI = $request->DNI;
+        $empleado->email = $request->email;
+        
+        $empleado->update();
+
+        return $empleado;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $empleado = Empleado::find($id);
+        
+        if(is_null($empleado)) {
+            return response()->json('No se pudo realizar la operacion', 404);
+        }
+        
+        $empleado->delete();
+        return[];
     }
 }

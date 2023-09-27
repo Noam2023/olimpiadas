@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Llamado extends Model
 {
     use HasFactory;
+    public $timestamps = false; // Esto desactiva las marcas de tiempo
 }

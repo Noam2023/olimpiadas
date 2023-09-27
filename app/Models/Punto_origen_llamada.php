@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Punto_origen_llamada extends Model
 {
     use HasFactory;
+    public $timestamps = false; // Esto desactiva las marcas de tiempo
 }

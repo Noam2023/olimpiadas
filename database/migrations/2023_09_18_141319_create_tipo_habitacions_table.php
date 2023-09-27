@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('tipo_habitacions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('habitacion_id');
-
-            $table->foreign('habitacion_id')->references('id')->on('habitacions')->onDelete('cascade');
-
+            $table->string('tipo_habitacion');            
         });
     }
 

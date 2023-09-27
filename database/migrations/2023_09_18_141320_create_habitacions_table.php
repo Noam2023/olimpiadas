@@ -12,13 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('habitacions', function (Blueprint $table) {
-            $table->id(); // numero de habitacion
+            $table->unsignedBigInteger('id');
             $table->unsignedBigInteger('zona_id');
-            
+            $table->unsignedBigInteger('tipo_habitacion_id');
+    
+            $table->primary(['id', 'zona_id']);
+    
+            $table->foreign('tipo_habitacion_id')->references('id')->on('tipo_habitacions')->onDelete('cascade');
             $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');
-
         });
     }
+    
+
+    
+    
 
     /**
      * Reverse the migrations.

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Emergencia;
 
 class EmergenciaController extends Controller
 {
@@ -12,7 +13,7 @@ class EmergenciaController extends Controller
      */
     public function index()
     {
-        //
+        return Emergencia::all();
     }
 
     /**
@@ -20,23 +21,47 @@ class EmergenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'llamado_id' => 'required',
+            'cantidad_empleados_involucrados' => 'required',
+            'cantidad_empleados_requeridos' => 'required',
+        ]);
+
+        $emergencia = new Emergencia;
+        $emergencia->llamado_id = $request->llamado_id;
+        $emergencia->cantidad_empleados_involucrados = $request->cantidad_empleados_involucrados;
+        $emergencia->cantidad_empleados_requeridos = $request->cantidad_empleados_requeridos;
+        
+        $emergencia->save();
+
+        return $emergencia;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Emergencia $emergencia)
     {
-        //
+        return $emergencia;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Emergencia $emergencia)
     {
-        //
+        $request->validate([
+            'llamado_id' => 'required',
+            'cantidad_empleados_involucrados' => 'required',
+            'cantidad_empleados_requeridos' => 'required',
+        ]);
+
+        $emergencia->llamado_id = $request->llamado_id;
+        $emergencia->cantidad_empleados_involucrados = $request->cantidad_empleados_involucrados;
+        $emergencia->cantidad_empleados_requeridos = $request->cantidad_empleados_requeridos;
+        $emergencia->update();
+
+        return $emergencia;
     }
 
     /**
@@ -44,6 +69,13 @@ class EmergenciaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $emergencia = emergencia::find($id);
+        
+        if(is_null($emergencia)) {
+            return response()->json('No se pudo realizar la operacion', 404);
+        }
+        
+        $emergencia->delete();
+        return[];
     }
 }
