@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Punto_origen_llamada;
 
 class PuntoOrigenLlamadaController extends Controller
 {
@@ -12,7 +13,7 @@ class PuntoOrigenLlamadaController extends Controller
      */
     public function index()
     {
-        //
+        return Punto_origen_llamada::all();
     }
 
     /**
@@ -20,7 +21,17 @@ class PuntoOrigenLlamadaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'origen' => 'required',
+            'habitacion_id' => 'required',
+        ]);
+
+        $punto_origen = new Punto_origen_llamada;
+        $punto_origen->origen = $request->origen;
+        $punto_origen->habitacion_id = $request->habitacion_id;  
+        $punto_origen->save();
+
+        return $punto_origen;
     }
 
     /**
@@ -28,15 +39,25 @@ class PuntoOrigenLlamadaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return $punto_origen;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Punto_origen_llamada $punto_origen)
     {
-        //
+        $request->validate([
+            'origen' => 'required',
+            'habitacion_id' => 'required',
+        ]);
+
+        $punto_origen->origen = $request->origen;
+        $punto_origen->habitacion_id = $request->habitacion_id;  
+       
+        $punto_origen->update();
+
+        return $punto_origen;
     }
 
     /**
@@ -44,6 +65,13 @@ class PuntoOrigenLlamadaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $punto_origen = Punto_origen_llamada::find($id);
+        
+        if(is_null($punto_origen)) {
+            return response()->json('No se pudo realizar la operacion', 404);
+        }
+        
+        $punto_origen->delete();
+        return 'Registro borrado';
     }
 }

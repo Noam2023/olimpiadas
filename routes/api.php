@@ -31,13 +31,14 @@ Route::put('habitacions/{id}/{zona_id}/{tipo_habitacion_id}', 'App\Http\Controll
 Route::apiResource('habitacions', HabitacionoController::class); //h
 Route::get('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@show'); //h
 
-
 route::apiResource('tipo_habitacions', TipoHabitacionController::class); //h
+
+/* HECHOS ARRIBA*/
 route::apiResource('llamados', LlamadoController::class);
 route::apiResource('llamado__empleados', LlamadoEmpleadoController::class);
 route::apiResource('pacientes', PacienteController::class);
 route::apiResource('paciente_enfermeros', PacienteEnfermeroController::class);
-route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class);
+route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class); // pendiente
 route::apiResource('tipo_empleados', TipoEmpleadoController::class);
 route::apiResource('usuarios', UsuarioController::class);
 route::apiResource('zonas', ZonaController::class); //h
