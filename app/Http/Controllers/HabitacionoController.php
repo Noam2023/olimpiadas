@@ -56,26 +56,21 @@ class HabitacionoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update($id, $zona_id, Request $request)
+    public function update($id, $zona_id, $tipo_habitacion_id)
     {
-        $request->validate([
-            'zona_id' => 'required',
-            'tipo_habitacion_id' => 'required',
-        ]);
-    
+        
         $habitacion = Habitacion::where('id', $id)->where('zona_id', $zona_id)->first();
-        //dd($id, $zona_id,$request);
-    
+        
         if (!$habitacion) {
             return response()->json('Registro no encontrado', 404);
         }
-    
-        $habitacion->zona_id = $request->zona_id;
-        $habitacion->tipo_habitacion_id = $request->tipo_habitacion_id;
+        
+        $habitacion->tipo_habitacion_id = $tipo_habitacion_id;
+        
         $habitacion->save();
+        return json_encode($habitacion);        
+      
         
-        
-    
         return $habitacion;
     }
 /*

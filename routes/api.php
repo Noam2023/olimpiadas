@@ -17,12 +17,23 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ZonaController;
 use App\Http\Controllers\ZonaEmpleadoController;
 
+
+\Event::listen('Illuminate\Database\Events\QueryExecuted', function($query) {
+    Log::debug($query->sql);
+    Log::debug($query->bindings);
+    Log::debug($query->time);
+});
+
 route::apiResource('emergencias', EmergenciaController::class); //h
 route::apiResource('empleados', EmpleadoController::class); //h
-
-route::apiResource('habitacions', HabitacionoController::class); //h
+/*
+Route::put('/prueba/{id}', function($id){
+    return $id;
+});
+*/
+Route::put('habitacions/{id}/{zona_id}/{tipo_habitacion_id}', 'App\Http\Controllers\HabitacionoController@update');
+Route::apiResource('habitacions', HabitacionoController::class); //h
 Route::get('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@show'); //h
-Route::put('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@update');
 
 
 route::apiResource('tipo_habitacions', TipoHabitacionController::class); //h
