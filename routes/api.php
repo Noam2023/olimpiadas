@@ -26,11 +26,7 @@ use App\Http\Controllers\ZonaEmpleadoController;
 
 route::apiResource('emergencias', EmergenciaController::class); //h
 route::apiResource('empleados', EmpleadoController::class); //h
-/*
-Route::put('/prueba/{id}', function($id){
-    return $id;
-});
-*/
+
 Route::put('habitacions/{id}/{zona_id}/{tipo_habitacion_id}', 'App\Http\Controllers\HabitacionoController@update');
 Route::apiResource('habitacions', HabitacionoController::class); //h
 Route::get('habitacions/{id}/{zona_id}', 'App\Http\Controllers\HabitacionoController@show'); //h
@@ -48,3 +44,9 @@ route::apiResource('zonas', ZonaController::class); //h
 route::apiResource('zona__empleados', ZonaEmpleadoController::class);
 
 
+
+/*
+Route::put('/prueba/{id}', function($id){
+    return $id;
+});
+*/

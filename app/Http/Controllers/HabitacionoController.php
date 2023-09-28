@@ -73,38 +73,20 @@ class HabitacionoController extends Controller
         
         return $habitacion;
     }
-/*
-$id = 100;
-
-App\Models\Habitacion:::where('id', $id)->where('zona_id', $zona_id)->update([
-    'zona_id' => $request->zona_id, // Nuevo valor para zona_id
-    'tipo_habitacion_id' => $request->tipo_habitacion_id; // Nuevo valor para tipo_habitacion_id
-]);
-     
-*/
-    
-    
-    
-    
-        
-
-
-  
-
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $habitacion = Habitacion::find($id, $zona_id);
+        $habitacion = Habitacion::find($id);
         
         if(is_null($habitacion)) {
             return response()->json('No se pudo realizar la operacion', 404);
         }
         
         $habitacion->delete();
-        return[];
+        return 'Registro borrado';
     }
 
 }
