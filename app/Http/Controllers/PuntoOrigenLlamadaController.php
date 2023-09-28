@@ -45,17 +45,18 @@ class PuntoOrigenLlamadaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Punto_origen_llamada $punto_origen)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'origen' => 'required',
             'habitacion_id' => 'required',
         ]);
 
+        $punto_origen = Punto_origen_llamada::find($id);
         $punto_origen->origen = $request->origen;
         $punto_origen->habitacion_id = $request->habitacion_id;  
        
-        $punto_origen->update();
+        $punto_origen->save();
 
         return $punto_origen;
     }
