@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_usuario', 10);
-            $table->string('contrasena', 10);
+            $table->string('contrasena', 10)->unique();
             $table->boolean('es_admin')->default(false);
+            $table->unsignedBigInteger('empleado_id')->unique();
+            
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
         });
     }
 

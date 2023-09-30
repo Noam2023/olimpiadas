@@ -22,13 +22,13 @@ class EmergenciaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'llamado_id' => 'required',
+            'id' => 'required',
             'cantidad_empleados_involucrados' => 'required',
             'cantidad_empleados_requeridos' => 'required',
         ]);
 
         $emergencia = new Emergencia;
-        $emergencia->llamado_id = $request->llamado_id;
+        $emergencia->id = $request->id;
         $emergencia->cantidad_empleados_involucrados = $request->cantidad_empleados_involucrados;
         $emergencia->cantidad_empleados_requeridos = $request->cantidad_empleados_requeridos;
         
@@ -51,14 +51,12 @@ class EmergenciaController extends Controller
     public function update(Request $request, Emergencia $emergencia)
     {
         $request->validate([
-            'llamado_id' => 'required',
             'cantidad_empleados_involucrados' => 'required',
-            'cantidad_empleados_requeridos' => 'required',
         ]);
 
-        $emergencia->llamado_id = $request->llamado_id;
+        //$emergencia->id = $request->id;
         $emergencia->cantidad_empleados_involucrados = $request->cantidad_empleados_involucrados;
-        $emergencia->cantidad_empleados_requeridos = $request->cantidad_empleados_requeridos;
+        //$emergencia->cantidad_empleados_requeridos = $request->cantidad_empleados_requeridos;
         $emergencia->update();
 
         return $emergencia;

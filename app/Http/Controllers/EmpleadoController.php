@@ -27,7 +27,7 @@ class EmpleadoController extends Controller
             'telefono' => 'required',
             'DNI' => 'required',
             'email' => 'required',
-            
+            'tipo_id' => 'required',
         ]);
 
         $empleado = new Empleado;
@@ -36,7 +36,8 @@ class EmpleadoController extends Controller
         $empleado->telefono = $request->telefono;
         $empleado->DNI = $request->DNI;
         $empleado->email = $request->email;
-        
+        $empleado->tipo_id = $request->tipo_id;
+
         $empleado->save();
 
         return $empleado;
@@ -61,7 +62,7 @@ class EmpleadoController extends Controller
             'telefono' => 'required',
             'DNI' => 'required',
             'email' => 'required',
-            
+            'tipo_id' => 'required',
         ]);
 
         $empleado->nombre_empleado = $request->nombre_empleado;
@@ -69,7 +70,7 @@ class EmpleadoController extends Controller
         $empleado->telefono = $request->telefono;
         $empleado->DNI = $request->DNI;
         $empleado->email = $request->email;
-        
+        $empleado->tipo_id = $request->tipo_id;
         $empleado->update();
 
         return $empleado;
@@ -87,6 +88,6 @@ class EmpleadoController extends Controller
         }
         
         $empleado->delete();
-        return[];
+        return 'Empleado eliminado';
     }
 }

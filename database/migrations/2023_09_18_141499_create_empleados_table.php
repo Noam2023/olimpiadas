@@ -17,7 +17,11 @@ return new class extends Migration
             $table->string('apellido_empleado');
             $table->string('telefono', 15);
             $table->string('DNI', 25)->unique();
-            $table->string('email')->unique();   
+            $table->string('email')->unique();  
+            $table->unsignedBigInteger('tipo_id');
+            
+            $table->foreign('tipo_id')->references('id')->on('tipo_empleados')->onDelete('cascade');
+            
         });
     }
 

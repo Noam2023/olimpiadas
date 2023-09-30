@@ -12,7 +12,7 @@ class TipoEmpleadoController extends Controller
      */
     public function index()
     {
-        //
+        return Empleado::all();
     }
 
     /**
@@ -20,15 +20,23 @@ class TipoEmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cargo' => 'required',
+        ]);
+
+        $tipo = new Tipo_empleado;
+        $tipo->cargo = $request->cargo;
+        $tipo->save();
+
+        return $tipo;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Tipo_empleado $tipo)
     {
-        //
+        return $tipo;
     }
 
     /**
@@ -36,7 +44,14 @@ class TipoEmpleadoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'cargo' => 'required',
+        ]);
+
+        $tipo->cargo = $request->cargo;
+        $tipo->save();
+
+        return $tipo;
     }
 
     /**
@@ -44,6 +59,13 @@ class TipoEmpleadoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tipo = Tipo_empleado::find($id);
+        
+        if(is_null($tipo)) {
+            return response()->json('No se pudo realizar la operacion', 404);
+        }
+        
+        $tipo->delete();
+        return "Registro borrado";
     }
 }

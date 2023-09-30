@@ -15,5 +15,15 @@ class Empleado extends Model
         'telefono',
         'DNI',
         'email',
+        'tipo_id',
     ]; 
+
+    public function empleado_usuario()
+    {
+        return $this->hasOne(Usuario::class);
+    }
+
+    public function habitacion_origenes() {
+        return $this->belongsTo(Tipo_empleado::class);
+    }
 }
