@@ -77,16 +77,21 @@ class HabitacionoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id, $zona_id)
     {
-        $habitacion = Habitacion::find($id);
-        
-        if(is_null($habitacion)) {
-            return response()->json('No se pudo realizar la operacion', 404);
+      
+        $habitacion = Habitacion::where('id', $id)
+            ->where('zona_id', $zona_id)
+            ->delete();
+    
+        if (is_null($habitacion)) {
+            return response()->json('No se encontró ningún registro con el id y zona_id especificados', 404);
         }
-        
-        $habitacion->delete();
+    
         return 'Registro borrado';
+        
     }
+    
+    
 
 }

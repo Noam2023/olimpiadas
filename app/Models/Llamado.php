@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Llamado extends Model
 {
     use HasFactory;
-    //public $timestamps = false; 
+    public $timestamps = false; 
     
     protected $fillable = [
         'es_atendido',
         'es_urgente',
-        'origen_id',
+        'habitacion_id',
+        'zona_id',
     ];
 
-    public function punto() {
-        return $this->belongsTo(Punto_origen_llamada::class);
+    public function llamadaDeEmergencia()
+    {
+        return $this->hasOne(Emergencia::class);
     }
 }

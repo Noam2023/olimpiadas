@@ -24,15 +24,15 @@ class LlamadoController extends Controller
         $request->validate([
             'es_atendido' => 'required',
             'es_urgente' => 'required',
-            'origen_id' => 'required',
-            'FechaHora_llamada' => 'required',
+            'zona_id' => 'required',
+            'habitacion_id' => 'required',
         ]);
 
         $llamado = new Llamado;
         $llamado->es_atendido = $request->es_atendido;
         $llamado->es_urgente = $request->es_urgente;
-        $llamado->origen_id = $request->origen_id;
-        $llamado->FechaHora_llamada = $request->FechaHora_llamada;
+        $llamado->zona_id = $request->zona_id;
+        $llamado->habitacion_id = $request->habitacion_id;
        
         $llamado->save();
 
@@ -55,14 +55,14 @@ class LlamadoController extends Controller
         $request->validate([
             'es_atendido' => 'required',
             'es_urgente' => 'required',
-            'origen_id' => 'required',
-            'FechaHora_llamada' => 'required',
+            'zona_id' => 'required',
+            'habitacion_id' => 'required',
         ]);
 
         $llamado->es_atendido = $request->es_atendido;
         $llamado->es_urgente = $request->es_urgente;
-        $llamado->origen_id = $request->origen_id;
-        $llamado->FechaHora_llamada = $request->FechaHora_llamada;
+        $llamado->zona_id = $request->zona_id;
+        $llamado->habitacion_id = $request->habitacion_id;
        
         $llamado->update();
 

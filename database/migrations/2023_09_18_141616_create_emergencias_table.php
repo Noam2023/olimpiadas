@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('emergencias', function (Blueprint $table) {
-            $table->unsignedBigInteger('llamado_id')->primary();
-            $table->integer('cantidad_empleados_involucrados');
+            $table->unsignedBigInteger('id')->primary();
+            $table->integer('cantidad_empleados_involucrados')->default(0);
             $table->integer('cantidad_empleados_requeridos');
 
-            $table->foreign('llamado_id')->references('id')->on('llamados')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('llamados')->onDelete('cascade');
 
         });
     }

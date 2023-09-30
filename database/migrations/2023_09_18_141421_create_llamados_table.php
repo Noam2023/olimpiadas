@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->boolean('es_atendido')->default(false);
             $table->boolean('es_urgente');
-            $table->unsignedBigInteger('origen_id');
-            $table->timestamp('FechaHora_llamada');
+            $table->unsignedBigInteger('habitacion_id');
+            $table->unsignedBigInteger('zona_id');
+            $table->timestamp('FechaHora_llamada')->useCurrent();     
             
-            $table->foreign('origen_id')->references('id')->on('punto_origen_llamadas')->onDelete('cascade');
+            $table->unique(['habitacion_id', 'zona_id']);
 
+            $table->foreign('habitacion_id')->references('id')->on('habitacions')->onDelete('cascade');
+            $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');           
         });
     }
 

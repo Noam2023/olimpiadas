@@ -23,6 +23,13 @@ class Habitacion extends Model
         return $this->belongsTo(TipoHabitacion::class);
     }
 
+    public function habitacion_origenes() {
+        return $this->hasMany(Punto_origen_llamada::class);
+    }
+
+    public function llamados() {
+        return $this->hasMany(Llamado::class);
+    }
     
     
 }
