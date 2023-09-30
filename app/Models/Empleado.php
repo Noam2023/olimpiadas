@@ -26,4 +26,8 @@ class Empleado extends Model
     public function habitacion_origenes() {
         return $this->belongsTo(Tipo_empleado::class);
     }
+
+    public function empleado_responde() {
+        return $this->hasMany(Llamado_Empleado::class);
+    }
 }

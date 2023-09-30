@@ -9,4 +9,15 @@ class Llamado_Empleado extends Model
 {
     use HasFactory;
     public $timestamps = false; // Esto desactiva las marcas de tiempo
+
+    protected $fillable = [
+        'llamado_id',
+        'empleado_id',
+        // 'hora_atendido',
+        // 'tiempo_respuesta',
+    ];
+
+
+
+    
 }

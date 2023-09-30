@@ -21,4 +21,8 @@ class Llamado extends Model
     {
         return $this->hasOne(Emergencia::class);
     }
+
+    public function llamada_es_respondida() {
+        return $this->hasMany(Llamado_Empleado::class);
+    }
 }

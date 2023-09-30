@@ -37,7 +37,10 @@ route::apiResource('tipo_habitacions', TipoHabitacionController::class); //h
 
 /* HECHOS ARRIBA*/
 route::apiResource('llamados', LlamadoController::class);
+
 route::apiResource('llamado__empleados', LlamadoEmpleadoController::class);
+
+
 route::apiResource('pacientes', PacienteController::class);
 route::apiResource('paciente_enfermeros', PacienteEnfermeroController::class);
 //      route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class); // pendiente

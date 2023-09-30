@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('llamado__empleados', function (Blueprint $table) {
             $table->unsignedBigInteger('llamado_id');
             $table->unsignedBigInteger('empleado_id');
-            $table->datetime('hora_atendido')->nullable();
-            //$table->int('tiempo_respuesta')->nullable();
+            $table->datetime('hora_atendido');
+            $table->integer('tiempo_respuesta');
 
             $table->foreign('llamado_id')->references('id')->on('llamados')->onDelete('cascade');
             $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
