@@ -20,5 +20,9 @@ class Zona extends Model
         return $this->hasMany(Habitacion::class);
     }
 
+    public function zona_enfermero() {
+        return $this->belongsToMany(Tag::class, 'Empleado');
+    }
+
    
 }

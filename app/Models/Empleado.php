@@ -34,4 +34,8 @@ class Empleado extends Model
     public function paciente_enfermero() {
         return $this->belongsToMany(Tag::class, 'Paciente');
     }
+
+    public function enfermero_zona() {
+        return $this->belongsToMany(Tag::class, 'Zona');
+    }
 }

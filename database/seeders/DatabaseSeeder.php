@@ -255,6 +255,21 @@ class DatabaseSeeder extends Seeder
         $paciente_empleado->empleado_id = 2;
         $paciente_empleado->save();
 
+        $paciente_empleado = new Paciente_Enfermero();
+        $paciente_empleado->paciente_id = 1;
+        $paciente_empleado->empleado_id = 1;
+        $paciente_empleado->save();
+
+        $zona_empleado = new ZonaEmpleado();
+        $zona_empleado->zona_id = 1;
+        $zona_empleado->empleado_id = 1;
+        $zona_empleado->save();
+
+        $zona_empleado = new ZonaEmpleado();
+        $zona_empleado->zona_id = 3;
+        $zona_empleado->empleado_id = 4;
+        $zona_empleado->save();
+
     
     }
 }

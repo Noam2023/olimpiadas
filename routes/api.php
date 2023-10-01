@@ -38,17 +38,20 @@ route::apiResource('tipo_habitacions', TipoHabitacionController::class); //h
 /* HECHOS ARRIBA*/
 route::apiResource('llamados', LlamadoController::class);
 
-route::apiResource('llamado__empleados', LlamadoEmpleadoController::class);
+route::apiResource('llamado__empleados', LlamadoEmpleadoController::class); //pendiente
 
 
 route::apiResource('pacientes', PacienteController::class);
 
 Route::get('paciente_enfermeros/{paciente_id}/{empleado_id}', 'App\Http\Controllers\PacienteEnfermeroController@show'); //h
+Route::delete('paciente_enfermeros/{paciente_id}/{empleado_id}', 'App\Http\Controllers\PacienteEnfermeroController@destroy'); //h
 route::apiResource('paciente_enfermeros', PacienteEnfermeroController::class);
-//      route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class); // pendiente
+
 route::apiResource('tipo_empleados', TipoEmpleadoController::class);
 route::apiResource('usuarios', UsuarioController::class);
 route::apiResource('zonas', ZonaController::class); //h
+
+Route::delete('zona__empleados/{zona_id}/{empleado_id}', 'App\Http\Controllers\ZonaEmpleadoController@destroy'); //h
 route::apiResource('zona__empleados', ZonaEmpleadoController::class);
 
 

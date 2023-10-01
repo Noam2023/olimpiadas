@@ -14,5 +14,6 @@ class Paciente_enfermero extends Model
         'empleado_id'
     ];
 
+
    
 }

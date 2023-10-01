@@ -9,4 +9,9 @@ class Zona_Empleado extends Model
 {
     use HasFactory;
     public $timestamps = false; // Esto desactiva las marcas de tiempo
+
+    protected $fillable = [
+        'zona_id',
+        'empleado_id',
+    ];
 }
