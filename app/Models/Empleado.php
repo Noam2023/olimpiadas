@@ -30,4 +30,8 @@ class Empleado extends Model
     public function empleado_responde() {
         return $this->hasMany(Llamado_Empleado::class);
     }
+
+    public function paciente_enfermero() {
+        return $this->belongsToMany(Tag::class, 'Paciente');
+    }
 }

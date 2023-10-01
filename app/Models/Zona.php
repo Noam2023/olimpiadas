@@ -19,4 +19,6 @@ class Zona extends Model
     public function habitacion() {
         return $this->hasMany(Habitacion::class);
     }
+
+   
 }

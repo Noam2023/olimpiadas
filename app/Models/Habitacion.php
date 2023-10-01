@@ -30,6 +30,10 @@ class Habitacion extends Model
     public function llamados() {
         return $this->hasMany(Llamado::class);
     }
+
+    public function habitacion_pacientes() {
+        return $this->hasMany(Paciente::class);
+    }
     
     
 }

@@ -42,6 +42,8 @@ route::apiResource('llamado__empleados', LlamadoEmpleadoController::class);
 
 
 route::apiResource('pacientes', PacienteController::class);
+
+Route::get('paciente_enfermeros/{paciente_id}/{empleado_id}', 'App\Http\Controllers\PacienteEnfermeroController@show'); //h
 route::apiResource('paciente_enfermeros', PacienteEnfermeroController::class);
 //      route::apiResource('punto_origen_llamadas', PuntoOrigenLlamadaController::class); // pendiente
 route::apiResource('tipo_empleados', TipoEmpleadoController::class);

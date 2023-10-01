@@ -25,4 +25,8 @@ class Llamado extends Model
     public function llamada_es_respondida() {
         return $this->hasMany(Llamado_Empleado::class);
     }
+
+    public function habitacion_llamados() {
+        return $this->belongsTo(Habitacion::class);
+    }
 }

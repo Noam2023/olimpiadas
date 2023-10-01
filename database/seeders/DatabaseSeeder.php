@@ -10,7 +10,7 @@ use App\Models\Emergencia;
 use App\Models\Empleado;
 use App\Models\Habitacion;
 use App\Models\Llamado;
-use App\Models\LlamadoEmpleado;
+use App\Models\Llamado_Empleado;
 use App\Models\Paciente;
 use App\Models\PacienteEnfermero;
 use App\Models\Tipo_empleado;
@@ -18,6 +18,7 @@ use App\Models\TipoHabitacion;
 use App\Models\Usuario;
 use App\Models\Zona;
 use App\Models\ZonaEmpleado;
+use App\Models\Paciente_Enfermero;
 
 
 
@@ -218,6 +219,42 @@ class DatabaseSeeder extends Seeder
         $usuario->es_admin = true;
         $usuario->save();
 
+        $paciente = new Paciente();
+        $paciente->habitacion_id = 100;
+        $paciente->nombre_paciente = "Juan";
+        $paciente->apellido_paciente = "Pérez";
+        $paciente->telefono_contacto = "555-555-5555";
+        $paciente->telefono_paciente = "555-555-5555";
+        $paciente->tipo_sangre = "O+";
+        $paciente->padecimientos_previos = "Ninguno";
+        $paciente->alergias = "Ninguna";
+        $paciente->DNI = "12345678";
+        $paciente->razon_ingreso = "Consulta médica";
+        $paciente->save();
 
+        $paciente = new Paciente();
+        $paciente->habitacion_id = 101;
+        $paciente->nombre_paciente = "Maria";
+        $paciente->apellido_paciente = "Gomez";
+        $paciente->telefono_contacto = "555-555-5555";
+        $paciente->telefono_paciente = "555-555-5555";
+        $paciente->tipo_sangre = "B-";
+        $paciente->padecimientos_previos = "Hipertensión";
+        $paciente->alergias = "Penicilina";
+        $paciente->DNI = "23456789";
+        $paciente->razon_ingreso = "Dolor en el pecho";
+        $paciente->save();
+
+        $paciente_empleado = new Paciente_Enfermero();
+        $paciente_empleado->paciente_id = 1;
+        $paciente_empleado->empleado_id = 1;
+        $paciente_empleado->save();
+
+        $paciente_empleado = new Paciente_Enfermero();
+        $paciente_empleado->paciente_id = 1;
+        $paciente_empleado->empleado_id = 2;
+        $paciente_empleado->save();
+
+    
     }
 }

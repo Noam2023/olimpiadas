@@ -37,13 +37,9 @@ class LlamadoEmpleadoController extends Controller
             $llamado_empleado->empleado_id = $request->empleado_id;
             
             $llamado = Llamado::findOrFail($request->llamado_id);
-            $hora_inicio = Carbon::parse($llamado->FechaHora_llamada);
-        
+            $hora_inicio = Carbon::parse($llamado->FechaHora_llamada);       
            
-            $llamado_empleado->hora_atendido = now();
-
- // Esto obtiene la fecha y hora actual
-            
+            $llamado_empleado->hora_atendido = now();           
          
             $tiempo_respuesta = $hora_inicio->diffInSeconds($llamado_empleado->hora_atendido);
             $llamado_empleado->tiempo_respuesta = $tiempo_respuesta;

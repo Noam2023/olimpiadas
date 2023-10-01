@@ -67,6 +67,6 @@ class ZonaController extends Controller
         }
         
         $zona->delete();
-        return[];
+        return 'Zona eliminada';
     }
 }
