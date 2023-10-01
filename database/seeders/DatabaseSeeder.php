@@ -17,7 +17,7 @@ use App\Models\Tipo_empleado;
 use App\Models\TipoHabitacion;
 use App\Models\Usuario;
 use App\Models\Zona;
-use App\Models\ZonaEmpleado;
+use App\Models\Zona_Empleado;
 use App\Models\Paciente_Enfermero;
 
 
@@ -257,15 +257,15 @@ class DatabaseSeeder extends Seeder
 
         $paciente_empleado = new Paciente_Enfermero();
         $paciente_empleado->paciente_id = 1;
-        $paciente_empleado->empleado_id = 1;
+        $paciente_empleado->empleado_id = 4;
         $paciente_empleado->save();
 
-        $zona_empleado = new ZonaEmpleado();
+        $zona_empleado = new Zona_Empleado();
         $zona_empleado->zona_id = 1;
         $zona_empleado->empleado_id = 1;
         $zona_empleado->save();
 
-        $zona_empleado = new ZonaEmpleado();
+        $zona_empleado = new Zona_Empleado();
         $zona_empleado->zona_id = 3;
         $zona_empleado->empleado_id = 4;
         $zona_empleado->save();
